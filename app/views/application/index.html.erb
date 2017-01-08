@@ -1,0 +1,20 @@
+<%= form_tag do %>
+<input type="hidden" name="index" value="<%= @index %>"/>
+<table style="width: 100%">
+<tr><td colspan="2" style="height: 100px">
+	<audio controls src="/stream/<%= @index %>" type="audio/mpeg" preload="auto" style="width: 100% !important; min-height: 100px; display: block;"></audio>
+</td></tr>
+<tr><td>Index:</td><td><%= @index %> / <%= @files.length %></td></tr>
+<tr><td>File:</td><td style="font-size: 10pt; color: grey"><%= @file %></td></tr>
+<tr><td>Title:</td><td><%= @title %></td></tr>
+<tr><td>Artist:</td><td><%= @artist %></td></tr>
+<tr><td>Album:</td><td><%= @album %></td></tr>
+<tr><td>Current:</td><td><%= @filename %></td></tr>
+<tr><td>New:</td><td><%= @new_filename %></td></tr>
+<tr><td colspan="2"><button style="width: 100%; height: 200px; font-size: 40px" formaction="/nogood">NO GOOD!</button></td></tr>
+<tr><td colspan="2" style="height: 100px"></td></tr>
+<tr><td colspan="2"><button style="width: 100%; height: 200px; font-size: 40px" formaction="/rename">GOOD - RENAME</button></td></tr>
+<tr><td colspan="2" style="height: 100px"></td></tr>
+<tr><td colspan="2"><button style="width: 100%; height: 200px; font-size: 40px" formaction="/keepname">GOOD - KEEP NAME</button></td></tr>
+</table>
+<% end -%>
